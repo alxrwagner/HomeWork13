@@ -3,7 +3,7 @@ package transport;
 import driver.DriverCar;
 
 
-public abstract class Transport<T extends DriverCar> {
+public abstract class Transport<T> {
 
     protected final String brand;
     protected final String model;

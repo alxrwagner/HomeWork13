@@ -3,13 +3,10 @@ package transport;
 import driver.DriverCar;
 import driver.DriverB;
 
-public class PassengerCar<B extends DriverB> extends Transport implements ICompeting {
+public class PassengerCar extends Transport<DriverB> implements ICompeting {
 
-    private final B driver;
-    public PassengerCar(String brand, String model, float volumeEngine, B driver) {
+    public PassengerCar(String brand, String model, float volumeEngine, DriverB driver) {
         super(brand, model, volumeEngine, driver);
-
-        this.driver = driver;
     }
 
     @Override
@@ -32,9 +29,5 @@ public class PassengerCar<B extends DriverB> extends Transport implements ICompe
         return "Я - легковой ААААААААвтомобиииль, мой бренд: " + brand  +
                 ", модель: " + model +
                 ", а объем двигателя: " + volumeEngine;
-    }
-
-    public B getDriver() {
-        return driver;
     }
 }

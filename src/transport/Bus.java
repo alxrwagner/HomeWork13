@@ -4,14 +4,10 @@ import driver.DriverD;
 
 import java.sql.Driver;
 
-public class Bus<D extends DriverD> extends Transport implements ICompeting {
+public class Bus extends Transport<DriverD> implements ICompeting {
 
-    private final D driver;
-
-    public Bus(String brand, String model, float volumeEngine, D driver) {
+    public Bus(String brand, String model, float volumeEngine, DriverD driver) {
         super(brand, model, volumeEngine, driver);
-
-        this.driver = driver;
     }
 
     @Override
@@ -34,9 +30,5 @@ public class Bus<D extends DriverD> extends Transport implements ICompeting {
         return "Я - автобус, мой бренд: " + brand  +
                 ", модель: " + model +
                 ", а объем двигателя: " + volumeEngine;
-    }
-
-    public D getDriver() {
-        return driver;
     }
 }
