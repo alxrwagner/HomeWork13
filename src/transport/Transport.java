@@ -32,4 +32,6 @@ public abstract class Transport<T> {
     public T getDriver() {
         return driver;
     }
+
+    public abstract void getType();
 }

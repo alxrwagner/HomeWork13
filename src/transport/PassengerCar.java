@@ -5,8 +5,20 @@ import driver.DriverB;
 
 public class PassengerCar extends Transport<DriverB> implements ICompeting {
 
+    private BodyType bodyType;
+
     public PassengerCar(String brand, String model, float volumeEngine, DriverB driver) {
         super(brand, model, volumeEngine, driver);
+    }
+
+    @Override
+    public void getType() {
+        if (bodyType == null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
+        else {
+            System.out.println(bodyType);
+        }
     }
 
     @Override
@@ -22,6 +34,14 @@ public class PassengerCar extends Transport<DriverB> implements ICompeting {
     @Override
     public void maxSpeed() {
         System.out.println("Моя максимальная скорость равна скорости света, такие дела =^__^=");
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override

@@ -1,10 +1,7 @@
 import driver.DriverB;
 import driver.DriverC;
 import driver.DriverD;
-import transport.Bus;
-import transport.PassengerCar;
-import transport.Track;
-import transport.Transport;
+import transport.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +9,7 @@ public class Main {
         DriverB driverB = new DriverB("Покемон Покемонович");
         DriverC driverC = new DriverC("Кто-то Какой-тович");
         DriverD driverD = new DriverD("Водитель Водятелович");
+
         Track volvoTrack = new Track("Volvo", "T1", 6f, driverC);
         Track opelTrack = new Track("Opel", "T2", 3f, driverC);
         Track audiTrack = new Track("Audi", "T3", 7f, driverC);
@@ -27,6 +25,9 @@ public class Main {
         Bus audiBus = new Bus("Audi", "B3", 9, driverD);
         Bus toyotaoBus = new Bus("Toyota", "B4", 11, driverD);
 
+        volvoPassenger.setBodyType(BodyType.CROSSOVER);
+        volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
+
         System.out.println(volvoTrack);
         System.out.println(volvoPassenger);
         System.out.println(volvoBus);
@@ -34,6 +35,12 @@ public class Main {
         printMessage(volvoTrack);
         printMessage(volvoPassenger);
         printMessage(volvoBus);
+
+        System.out.println();
+
+        volvoBus.getType();
+        volvoPassenger.getType();
+        volvoTrack.getType();
 
     }
 
