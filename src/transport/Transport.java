@@ -37,18 +37,18 @@ public abstract class Transport<T extends DriverCar> {
         return driver;
     }
 
-    public DriverLicenseType getDriverLicense() throws NotFoundTypeOfDriverLicenseExeption{
-        if (driver.getTypeOfDriverLicense() == null || driver.getTypeOfDriverLicense() != requiredTypeDriverLicense){
-            throw new NotFoundTypeOfDriverLicenseExeption("Лицензия отсутствует или не соответствует ожидаемой: " + requiredTypeDriverLicense.name());
-        }
-        return driver.getTypeOfDriverLicense();
-    }
+    public void checkDriverLicense(){
 
-    public void checkDriverLicense() {
         try {
-            getDriverLicense();
+            if (driver.getTypeOfDriverLicense() == null || driver.getTypeOfDriverLicense() != requiredTypeDriverLicense){
+                throw new NotFoundTypeOfDriverLicenseExeption("Лицензия отсутствует или не соответствует ожидаемой: " + requiredTypeDriverLicense.name());
+            }
         } catch (NotFoundTypeOfDriverLicenseExeption e) {
             System.out.println(e.getMessage());
+        }finally {
+            System.out.println(
+                    driver.getTypeOfDriverLicense() == null ? "Категория прав неизвестна" : "Категория прав: " + driver.getTypeOfDriverLicense()
+            );
         }
     }
 
