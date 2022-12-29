@@ -2,13 +2,14 @@ package transport;
 
 import driver.DriverCar;
 import driver.DriverB;
+import driver.DriverLicenseType;
 
 public class PassengerCar extends Transport<DriverB> implements ICompeting {
 
     private BodyType bodyType;
 
-    public PassengerCar(String brand, String model, float volumeEngine, DriverB driver) {
-        super(brand, model, volumeEngine, driver);
+    public PassengerCar(String brand, String model, float volumeEngine, DriverB driver, DriverLicenseType requiredTypeDriverLicense) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
     }
 
     @Override
@@ -19,6 +20,11 @@ public class PassengerCar extends Transport<DriverB> implements ICompeting {
         else {
             System.out.println(bodyType);
         }
+    }
+
+    @Override
+    public void doDiagnosed() {
+        System.out.println(this + " диагностику прошел");
     }
 
     @Override

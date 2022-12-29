@@ -1,7 +1,10 @@
 import driver.DriverB;
 import driver.DriverC;
 import driver.DriverD;
+import driver.DriverLicenseType;
 import transport.*;
+
+import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,20 +13,11 @@ public class Main {
         DriverC driverC = new DriverC("Кто-то Какой-тович");
         DriverD driverD = new DriverD("Водитель Водятелович");
 
-        Track volvoTrack = new Track("Volvo", "T1", 6f, driverC);
-        Track opelTrack = new Track("Opel", "T2", 3f, driverC);
-        Track audiTrack = new Track("Audi", "T3", 7f, driverC);
-        Track toyotaTrack = new Track("Toyota", "T4", 5f, driverC);
+        Track volvoTrack = new Track("Volvo", "T1", 6f, driverC, DriverLicenseType.C);
 
-        PassengerCar volvoPassenger = new PassengerCar("Volvo", "p1", 2f, driverB);
-        PassengerCar opelPassenger = new PassengerCar("Opel", "p2", 1.5f, driverB);
-        PassengerCar audiPassenger = new PassengerCar("Audi", "p3", 3f, driverB);
-        PassengerCar toyotaPassenger = new PassengerCar("Toyota", "p4", 2.5f, driverB);
+        PassengerCar volvoPassenger = new PassengerCar("Volvo", "p1", 2f, driverB, DriverLicenseType.B);
 
-        Bus volvoBus = new Bus("Volvo", "B1", 10f, driverD);
-        Bus opelBus = new Bus("Opel", "B2", 12, driverD);
-        Bus audiBus = new Bus("Audi", "B3", 9, driverD);
-        Bus toyotaoBus = new Bus("Toyota", "B4", 11, driverD);
+        Bus volvoBus = new Bus("Volvo", "B1", 10f, driverD, DriverLicenseType.D);
 
         volvoPassenger.setBodyType(BodyType.CROSSOVER);
         volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
@@ -41,6 +35,14 @@ public class Main {
         volvoBus.getType();
         volvoPassenger.getType();
         volvoTrack.getType();
+
+        volvoBus.doDiagnosed();
+        volvoPassenger.doDiagnosed();
+        volvoTrack.doDiagnosed();
+
+        volvoBus.checkDriverLicense();
+        volvoPassenger.checkDriverLicense();
+        volvoTrack.checkDriverLicense();
 
     }
 

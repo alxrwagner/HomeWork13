@@ -1,13 +1,14 @@
 package transport;
 
 import driver.DriverC;
+import driver.DriverLicenseType;
 
 public class Track extends Transport<DriverC> implements ICompeting {
 
     private LoadCapacityType loadCapacityType;
 
-    public Track(String brand, String model, float volumeEngine, DriverC driver) {
-        super(brand, model, volumeEngine, driver);
+    public Track(String brand, String model, float volumeEngine, DriverC driver, DriverLicenseType requiredTypeDriverLicense) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
     }
 
     @Override
@@ -17,6 +18,11 @@ public class Track extends Transport<DriverC> implements ICompeting {
         }else {
             System.out.println(loadCapacityType);
         }
+    }
+
+    @Override
+    public void doDiagnosed() {
+        System.out.println(this + " диагностику прошел");
     }
 
     @Override

@@ -1,15 +1,15 @@
 package transport;
 
+import Exeption.DiagnosisIsNotPossibleExeption;
 import driver.DriverD;
-
-import java.sql.Driver;
+import driver.DriverLicenseType;
 
 public class Bus extends Transport<DriverD> implements ICompeting {
 
     private PassengerCapacityType passengerCapacityType;
 
-    public Bus(String brand, String model, float volumeEngine, DriverD driver) {
-        super(brand, model, volumeEngine, driver);
+    public Bus(String brand, String model, float volumeEngine, DriverD driver, DriverLicenseType requiredTypeDriverLicense) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
     }
 
     @Override
@@ -19,6 +19,12 @@ public class Bus extends Transport<DriverD> implements ICompeting {
         }else {
             System.out.println(passengerCapacityType);
         }
+    }
+
+    @Override
+    public void doDiagnosed() {
+        Exception e = new DiagnosisIsNotPossibleExeption("Этот транспорт не может пройти диагностику");
+        System.out.println(this + " " + e.getMessage());
     }
 
     @Override
