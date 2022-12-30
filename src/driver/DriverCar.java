@@ -1,5 +1,7 @@
 package driver;
 
+import enumPackage.DriverLicenseType;
+
 public class DriverCar {
 
     protected String fullName;

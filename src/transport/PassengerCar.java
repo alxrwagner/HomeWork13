@@ -1,8 +1,8 @@
 package transport;
 
-import driver.DriverCar;
 import driver.DriverB;
-import driver.DriverLicenseType;
+import enumPackage.BodyType;
+import enumPackage.DriverLicenseType;
 
 public class PassengerCar extends Transport<DriverB> implements ICompeting {
 

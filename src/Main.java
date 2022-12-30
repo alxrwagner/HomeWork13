@@ -1,10 +1,10 @@
 import driver.DriverB;
 import driver.DriverC;
 import driver.DriverD;
-import driver.DriverLicenseType;
+import enumPackage.BodyType;
+import enumPackage.DriverLicenseType;
+import enumPackage.PassengerCapacityType;
 import transport.*;
-
-import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,9 +40,9 @@ public class Main {
         volvoPassenger.doDiagnosed();
         volvoTrack.doDiagnosed();
 
-        volvoBus.checkDriverLicense();
-        volvoPassenger.checkDriverLicense();
-        volvoTrack.checkDriverLicense();
+        volvoBus.printInfoDriverLicense();
+        volvoPassenger.printInfoDriverLicense();
+        volvoTrack.printInfoDriverLicense();
 
     }
 

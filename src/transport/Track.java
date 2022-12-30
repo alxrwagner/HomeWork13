@@ -1,7 +1,8 @@
 package transport;
 
 import driver.DriverC;
-import driver.DriverLicenseType;
+import enumPackage.DriverLicenseType;
+import enumPackage.LoadCapacityType;
 
 public class Track extends Transport<DriverC> implements ICompeting {
 

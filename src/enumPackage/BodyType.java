@@ -1,4 +1,4 @@
-package transport;
+package enumPackage;
 
 public enum BodyType {
     SEDAN("Седан"),

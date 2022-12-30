@@ -1,4 +1,4 @@
-package transport;
+package enumPackage;
 
 public enum PassengerCapacityType {
     ESPECIALLY_SMALL(null, 10),

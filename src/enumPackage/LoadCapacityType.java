@@ -1,4 +1,4 @@
-package transport;
+package enumPackage;
 
 public enum LoadCapacityType {
     N1(null, 3.5f),

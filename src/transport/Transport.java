@@ -1,8 +1,8 @@
 package transport;
 
-import Exeption.NotFoundTypeOfDriverLicenseExeption;
+import exeption.NotFoundTypeOfDriverLicenseExeption;
 import driver.DriverCar;
-import driver.DriverLicenseType;
+import enumPackage.DriverLicenseType;
 
 
 public abstract class Transport<T extends DriverCar> {
@@ -21,11 +21,11 @@ public abstract class Transport<T extends DriverCar> {
         this.requiredTypeDriverLicense = requiredTypeDriverLicense;
     }
 
-    public void startMove(){
+    public void startMove() {
         System.out.printf("%S %S начал движение%n", this.brand, this.model);
     }
 
-    public void endMove(){
+    public void endMove() {
         System.out.printf("%S %S начал закончил%n", this.brand, this.model);
     }
 
@@ -37,19 +37,22 @@ public abstract class Transport<T extends DriverCar> {
         return driver;
     }
 
-    public void checkDriverLicense(){
+    private void checkDriverLicense() throws NotFoundTypeOfDriverLicenseExeption {
 
+        if (driver.getTypeOfDriverLicense() == null || driver.getTypeOfDriverLicense() != requiredTypeDriverLicense) {
+            throw new NotFoundTypeOfDriverLicenseExeption("Лицензия отсутствует или не соответствует ожидаемой: " + requiredTypeDriverLicense.name());
+        }
+    }
+
+    public void printInfoDriverLicense(){
         try {
-            if (driver.getTypeOfDriverLicense() == null || driver.getTypeOfDriverLicense() != requiredTypeDriverLicense){
-                throw new NotFoundTypeOfDriverLicenseExeption("Лицензия отсутствует или не соответствует ожидаемой: " + requiredTypeDriverLicense.name());
-            }
+            checkDriverLicense();
         } catch (NotFoundTypeOfDriverLicenseExeption e) {
             System.out.println(e.getMessage());
-        }finally {
-            System.out.println(
-                    driver.getTypeOfDriverLicense() == null ? "Категория прав неизвестна" : "Категория прав: " + driver.getTypeOfDriverLicense()
-            );
         }
+        System.out.println(
+                driver.getTypeOfDriverLicense() == null ? "Категория прав неизвестна" : "Категория прав: " + driver.getTypeOfDriverLicense()
+        );
     }
 
     public abstract void getType();

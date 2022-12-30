@@ -1,8 +1,9 @@
 package transport;
 
-import Exeption.DiagnosisIsNotPossibleExeption;
+import enumPackage.PassengerCapacityType;
+import exeption.DiagnosisIsNotPossibleExeption;
 import driver.DriverD;
-import driver.DriverLicenseType;
+import enumPackage.DriverLicenseType;
 
 public class Bus extends Transport<DriverD> implements ICompeting {
 
