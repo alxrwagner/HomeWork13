@@ -6,7 +6,13 @@ import enumPackage.DriverLicenseType;
 import enumPackage.PassengerCapacityType;
 import transport.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+
+    public static List<Transport> cars = new ArrayList<>();
+
     public static void main(String[] args) {
 
         DriverB driverB = new DriverB("Покемон Покемонович");
@@ -18,6 +24,10 @@ public class Main {
         PassengerCar volvoPassenger = new PassengerCar("Volvo", "p1", 2f, driverB, DriverLicenseType.B);
 
         Bus volvoBus = new Bus("Volvo", "B1", 10f, driverD, DriverLicenseType.D);
+
+        cars.add(volvoTrack);
+        cars.add(volvoPassenger);
+        cars.add(volvoBus);
 
         volvoPassenger.setBodyType(BodyType.CROSSOVER);
         volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);

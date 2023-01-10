@@ -3,13 +3,14 @@ package transport;
 import driver.DriverC;
 import enumPackage.DriverLicenseType;
 import enumPackage.LoadCapacityType;
+import enumPackage.TypeTransport;
 
 public class Track extends Transport<DriverC> implements ICompeting {
 
     private LoadCapacityType loadCapacityType;
 
-    public Track(String brand, String model, float volumeEngine, DriverC driver, DriverLicenseType requiredTypeDriverLicense) {
-        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
+    public Track(String brand, String model, float volumeEngine, DriverC driver, DriverLicenseType requiredTypeDriverLicense, TypeTransport typeTransport) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense, typeTransport);
     }
 
     @Override

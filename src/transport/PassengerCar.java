@@ -3,13 +3,14 @@ package transport;
 import driver.DriverB;
 import enumPackage.BodyType;
 import enumPackage.DriverLicenseType;
+import enumPackage.TypeTransport;
 
 public class PassengerCar extends Transport<DriverB> implements ICompeting {
 
     private BodyType bodyType;
 
-    public PassengerCar(String brand, String model, float volumeEngine, DriverB driver, DriverLicenseType requiredTypeDriverLicense) {
-        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
+    public PassengerCar(String brand, String model, float volumeEngine, DriverB driver, DriverLicenseType requiredTypeDriverLicense, TypeTransport typeTransport) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense, typeTransport);
     }
 
     @Override

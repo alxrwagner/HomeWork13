@@ -1,6 +1,7 @@
 package transport;
 
 import enumPackage.PassengerCapacityType;
+import enumPackage.TypeTransport;
 import exeption.DiagnosisIsNotPossibleExeption;
 import driver.DriverD;
 import enumPackage.DriverLicenseType;
@@ -9,8 +10,8 @@ public class Bus extends Transport<DriverD> implements ICompeting {
 
     private PassengerCapacityType passengerCapacityType;
 
-    public Bus(String brand, String model, float volumeEngine, DriverD driver, DriverLicenseType requiredTypeDriverLicense) {
-        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense);
+    public Bus(String brand, String model, float volumeEngine, DriverD driver, DriverLicenseType requiredTypeDriverLicense, TypeTransport typeTransport) {
+        super(brand, model, volumeEngine, driver, requiredTypeDriverLicense, typeTransport);
     }
 
     @Override

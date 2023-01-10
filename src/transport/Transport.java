@@ -1,5 +1,6 @@
 package transport;
 
+import enumPackage.TypeTransport;
 import exeption.NotFoundTypeOfDriverLicenseExeption;
 import driver.DriverCar;
 import enumPackage.DriverLicenseType;
@@ -12,13 +13,15 @@ public abstract class Transport<T extends DriverCar> {
     protected final T driver;
     protected final float volumeEngine;
     protected final DriverLicenseType requiredTypeDriverLicense;
+    protected TypeTransport typeTransport;
 
-    public Transport(String brand, String model, float volumeEngine, T driver, DriverLicenseType requiredTypeDriverLicense) {
+    public Transport(String brand, String model, float volumeEngine, T driver, DriverLicenseType requiredTypeDriverLicense, TypeTransport typeTransport) {
         this.brand = brand;
         this.model = model;
         this.volumeEngine = volumeEngine;
         this.driver = driver;
         this.requiredTypeDriverLicense = requiredTypeDriverLicense;
+        this.typeTransport = typeTransport;
     }
 
     public void startMove() {
