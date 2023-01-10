@@ -9,7 +9,6 @@ import service.AutoMechanic;
 import transport.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class Main {
@@ -41,17 +40,19 @@ public class Main {
         mechanics.add(autoMechanic2);
         mechanics.add(autoMechanic3);
 
+        autoMechanic1.addTypeTransportServed(TypeTransport.PASSENGER_CAR);
+
         volvoPassenger.setBodyType(BodyType.CROSSOVER);
         volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
 
         mechanics.forEach(mechanic -> {
             System.out.println(mechanic);
-            mechanic.carryOutMaintenance(cars);
+            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
             System.out.println();
         });
         mechanics.forEach(mechanic -> {
             System.out.println(mechanic);
-            mechanic.repearTransport(cars);
+            mechanic.repearTransport(volvoPassenger, volvoBus);
             System.out.println();
         });
 //
@@ -76,7 +77,6 @@ public class Main {
 //        volvoBus.printInfoDriverLicense();
 //        volvoPassenger.printInfoDriverLicense();
 //        volvoTrack.printInfoDriverLicense();
-
     }
 
     public static void printMessage(Transport transport){
