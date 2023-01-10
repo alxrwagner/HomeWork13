@@ -1,5 +1,6 @@
 import driver.DriverB;
 import driver.DriverC;
+import driver.DriverCar;
 import driver.DriverD;
 import enumPackage.BodyType;
 import enumPackage.DriverLicenseType;
@@ -7,14 +8,15 @@ import enumPackage.PassengerCapacityType;
 import enumPackage.TypeTransport;
 import service.AutoMechanic;
 import transport.*;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
 
     public static List<Transport> cars = new ArrayList<>();
     public static  List<AutoMechanic> mechanics = new ArrayList<>();
+    public static List<DriverCar> drivers = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -31,6 +33,8 @@ public class Main {
         AutoMechanic autoMechanic1 = new AutoMechanic("Михаил В.Н.", "Service Car", TypeTransport.BUS);
         AutoMechanic autoMechanic2 = new AutoMechanic("Евгений Б.Г.", "Service Car", TypeTransport.BUS, TypeTransport.TRACK);
         AutoMechanic autoMechanic3 = new AutoMechanic("Елена А.Н.", "Service Car", TypeTransport.BUS, TypeTransport.PASSENGER_CAR, TypeTransport.TRACK);
+
+        Collections.addAll(drivers, driverB, driverC, driverD);
 
         cars.add(volvoTrack);
         cars.add(volvoPassenger);
