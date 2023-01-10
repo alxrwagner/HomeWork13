@@ -44,7 +44,7 @@ public class Main {
         mechanics.add(autoMechanic2);
         mechanics.add(autoMechanic3);
 
-        autoMechanic1.addTypeTransportServed(TypeTransport.PASSENGER_CAR);
+
 
         volvoPassenger.setBodyType(BodyType.CROSSOVER);
         volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
@@ -81,6 +81,10 @@ public class Main {
 //        volvoBus.printInfoDriverLicense();
 //        volvoPassenger.printInfoDriverLicense();
 //        volvoTrack.printInfoDriverLicense();
+
+        autoMechanic1.addTypeTransportServed(TypeTransport.PASSENGER_CAR);
+
+        System.out.println(autoMechanic1.getTypesTransportServed());
     }
 
     public static void printMessage(Transport transport){

@@ -19,21 +19,26 @@ public class AutoMechanic {
         Collections.addAll(this.typesTransportServed, typesTransportServed);
     }
 
-    public <T extends Transport> void carryOutMaintenance(T...transports){
-        for (T car : transports) {
-            if (typesTransportServed.contains(car.getTypeTransport())){
+    public Set<TypeTransport> getTypesTransportServed() {
+        return typesTransportServed;
+    }
+
+    public void carryOutMaintenance(Transport... transports) {
+
+        for (Transport car : transports) {
+            if (typesTransportServed.contains(car.getTypeTransport())) {
                 car.doDiagnosed();
-            }else {
+            } else {
                 System.out.println("Я не умею диагностировать транспорт типа: " + car.getTypeTransport());
             }
         }
     }
 
-    public <T extends Transport> void repearTransport(T... transports){
-        for (T car : transports) {
-            if (typesTransportServed.contains(car.getTypeTransport())){
+    public  void repearTransport(Transport... transports) {
+        for (Transport car : transports) {
+            if (typesTransportServed.contains(car.getTypeTransport())) {
                 System.out.println(car + " отремонтирован");
-            }else {
+            } else {
                 System.out.println("Я не умею диагностировать транспорт типа: " + car.getTypeTransport());
             }
         }
@@ -43,11 +48,10 @@ public class AutoMechanic {
         return typesTransportServed.toString();
     }
 
-    public void addTypeTransportServed(TypeTransport typeTransport){
-        if (typesTransportServed.contains(typeTransport)){
+    public void addTypeTransportServed(TypeTransport typeTransport) {
+        if (typesTransportServed.contains(typeTransport)) {
             System.out.println(fullName + " уже умеет ремонтировать и диагностировать транспорт типа: " + typeTransport);
-        }
-        else {
+        } else {
             typesTransportServed.add(typeTransport);
         }
     }
