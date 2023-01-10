@@ -52,8 +52,8 @@ public class Track extends Transport<DriverC> implements ICompeting {
 
     @Override
     public String toString() {
-        return "Я - грузовой автомобиль, мой бренд: " + brand  +
-                ", модель: " + model +
-                ", а объем двигателя: " + volumeEngine;
+        return "Грузовой автомобиль:" +
+                "\nБренд: " + brand  +
+                ", Модель: " + model;
     }
 }

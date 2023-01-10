@@ -53,8 +53,8 @@ public class PassengerCar extends Transport<DriverB> implements ICompeting {
 
     @Override
     public String toString() {
-        return "Я - легковой ААААААААвтомобиииль, мой бренд: " + brand  +
-                ", модель: " + model +
-                ", а объем двигателя: " + volumeEngine;
+        return "Легковой автомобиль: " +
+                "\nБренд: " + brand  +
+                ", Модель: " + model;
     }
 }

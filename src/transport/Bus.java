@@ -54,8 +54,8 @@ public class Bus extends Transport<DriverD> implements ICompeting {
 
     @Override
     public String toString() {
-        return "Я - автобус, мой бренд: " + brand  +
-                ", модель: " + model +
-                ", а объем двигателя: " + volumeEngine;
+        return "Автобус:" +
+                "\nБренд: " + brand  +
+                ", Модель: " + model;
     }
 }

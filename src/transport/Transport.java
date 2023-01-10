@@ -58,6 +58,10 @@ public abstract class Transport<T extends DriverCar> {
         );
     }
 
+    public TypeTransport getTypeTransport() {
+        return typeTransport;
+    }
+
     public abstract void getType();
 
     public abstract void doDiagnosed();
