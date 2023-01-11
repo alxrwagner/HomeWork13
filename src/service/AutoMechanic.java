@@ -39,7 +39,7 @@ public class AutoMechanic {
             if (typesTransportServed.contains(car.getTypeTransport())) {
                 System.out.println(car + " отремонтирован");
             } else {
-                System.out.println("Я не умею диагностировать транспорт типа: " + car.getTypeTransport());
+                System.out.println("Я не умею ремонтировать транспорт типа: " + car.getTypeTransport());
             }
         }
     }
