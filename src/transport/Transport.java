@@ -5,6 +5,8 @@ import exeption.NotFoundTypeOfDriverLicenseExeption;
 import driver.DriverCar;
 import enumPackage.DriverLicenseType;
 
+import java.util.Objects;
+
 
 public abstract class Transport<T extends DriverCar> {
 
@@ -65,4 +67,17 @@ public abstract class Transport<T extends DriverCar> {
     public abstract void getType();
 
     public abstract void doDiagnosed();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Float.compare(transport.volumeEngine, volumeEngine) == 0 && Objects.equals(getBrand(), transport.getBrand()) && Objects.equals(model, transport.model) && Objects.equals(getDriver(), transport.getDriver()) && requiredTypeDriverLicense == transport.requiredTypeDriverLicense && getTypeTransport() == transport.getTypeTransport();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBrand(), model, getDriver(), volumeEngine, requiredTypeDriverLicense, getTypeTransport());
+    }
 }

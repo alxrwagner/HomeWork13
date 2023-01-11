@@ -3,9 +3,7 @@ package service;
 import enumPackage.TypeTransport;
 import transport.Transport;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class AutoMechanic {
     final private String fullName;
@@ -19,8 +17,8 @@ public class AutoMechanic {
         Collections.addAll(this.typesTransportServed, typesTransportServed);
     }
 
-    public Set<TypeTransport> getTypesTransportServed() {
-        return typesTransportServed;
+    public List<Set<TypeTransport>> getTypesTransportServed() {
+        return Arrays.asList(typesTransportServed);
     }
 
     public void carryOutMaintenance(Transport... transports) {

@@ -14,7 +14,7 @@ import java.util.*;
 public class Main {
 
     public static List<Transport> cars = new ArrayList<>();
-    //public static  List<AutoMechanic> mechanics = new ArrayList<>();
+    public static  List<AutoMechanic> mechanics = new ArrayList<>();
     public static List<DriverCar> drivers = new ArrayList<>();
 
     public static Map<Transport, AutoMechanic> autoMechanicMap = new HashMap<>();
@@ -41,9 +41,9 @@ public class Main {
         cars.add(volvoPassenger);
         cars.add(volvoBus);
 
-//        mechanics.add(autoMechanic1);
-//        mechanics.add(autoMechanic2);
-//        mechanics.add(autoMechanic3);
+        mechanics.add(autoMechanic1);
+        mechanics.add(autoMechanic2);
+        mechanics.add(autoMechanic3);
 
         autoMechanicMap.put(volvoBus, autoMechanic1);
         autoMechanicMap.put(volvoTrack, autoMechanic2);
@@ -58,17 +58,17 @@ public class Main {
 //        volvoPassenger.setBodyType(BodyType.CROSSOVER);
 //        volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
 
-//        mechanics.forEach(mechanic -> {
-//            System.out.println(mechanic);
-//            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
-//            System.out.println();
-//        });
-//
-//        mechanics.forEach(mechanic -> {
-//            System.out.println(mechanic);
-//            mechanic.repearTransport(volvoPassenger, volvoBus);
-//            System.out.println();
-//        });
+        mechanics.forEach(mechanic -> {
+            System.out.println(mechanic);
+            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
+            System.out.println();
+        });
+
+        mechanics.forEach(mechanic -> {
+            System.out.println(mechanic);
+            mechanic.repearTransport(volvoPassenger, volvoBus);
+            System.out.println();
+        });
 //
 //        System.out.println(volvoTrack);
 //        System.out.println(volvoPassenger);
