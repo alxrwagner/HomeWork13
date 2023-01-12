@@ -53,7 +53,6 @@ public class Main {
 
         autoMechanicMap.forEach((key, value) -> System.out.println(key + " : " + value));
 
-
         Set<DriverCar> driversCar = new HashSet<>();
         Collections.addAll(driversCar, driverB, driverC, driverD);
 
@@ -102,8 +101,8 @@ public class Main {
 //        System.out.println(autoMechanic1.getTypesTransportServed());
     }
 
-    public static void printMessage(Transport transport){
-        System.out.println(transport.getDriver() + " управляет автомобилем " + transport +
-                " и будет участвовать в заезде");
-    }
+//    public static void printMessage(Transport transport){
+//        System.out.println(transport.getDriver() + " управляет автомобилем " + transport +
+//                " и будет участвовать в заезде");
+//    }
 }
