@@ -54,21 +54,25 @@ public class Main {
         autoMechanicMap.forEach((key, value) -> System.out.println(key + " : " + value));
 
 
+        Set<DriverCar> driversCar = new HashSet<>();
+        Collections.addAll(driversCar, driverB, driverC, driverD);
+
+        driversCar.forEach(System.out::println);
 
 //        volvoPassenger.setBodyType(BodyType.CROSSOVER);
 //        volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
 
-        mechanics.forEach(mechanic -> {
-            System.out.println(mechanic);
-            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
-            System.out.println();
-        });
-
-        mechanics.forEach(mechanic -> {
-            System.out.println(mechanic);
-            mechanic.repearTransport(volvoPassenger, volvoBus);
-            System.out.println();
-        });
+//        mechanics.forEach(mechanic -> {
+//            System.out.println(mechanic);
+//            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
+//            System.out.println();
+//        });
+//
+//        mechanics.forEach(mechanic -> {
+//            System.out.println(mechanic);
+//            mechanic.repearTransport(volvoPassenger, volvoBus);
+//            System.out.println();
+//        });
 //
 //        System.out.println(volvoTrack);
 //        System.out.println(volvoPassenger);
