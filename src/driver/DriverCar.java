@@ -2,6 +2,8 @@ package driver;
 
 import enumPackage.DriverLicenseType;
 
+import java.util.Objects;
+
 public class DriverCar {
 
     protected String fullName;
@@ -58,5 +60,18 @@ public class DriverCar {
     @Override
     public String toString() {
         return "Водитель: " + fullName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DriverCar driverCar = (DriverCar) o;
+        return isDriverLicense() == driverCar.isDriverLicense() && getExperience() == driverCar.getExperience() && Objects.equals(fullName, driverCar.fullName) && getTypeOfDriverLicense() == driverCar.getTypeOfDriverLicense();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, isDriverLicense(), getExperience(), getTypeOfDriverLicense());
     }
 }
