@@ -57,7 +57,11 @@ public class Main {
         Set<DriverCar> driversCar = new HashSet<>();
         Collections.addAll(driversCar, driverB, driverC, driverD);
 
-        driversCar.forEach(System.out::println);
+        Iterator<DriverCar> iterator = driversCar.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
 
 //        mechanics.forEach(mechanic -> {
 //            System.out.println(mechanic);
