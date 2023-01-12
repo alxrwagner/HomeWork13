@@ -59,9 +59,6 @@ public class Main {
 
         driversCar.forEach(System.out::println);
 
-//        volvoPassenger.setBodyType(BodyType.CROSSOVER);
-//        volvoBus.setPassengerCapacityType(PassengerCapacityType.ESPECIALLY_LARGE);
-
 //        mechanics.forEach(mechanic -> {
 //            System.out.println(mechanic);
 //            mechanic.carryOutMaintenance(volvoTrack, volvoPassenger);
